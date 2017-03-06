@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PagedViewContainerExample.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>67ACC94D1E6D714300DBBF66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>67ACC96C1E6D722100DBBF66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>67ACC97F1E6D722100DBBF66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
