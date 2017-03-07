@@ -13,6 +13,10 @@ protocol PageCoordinatorProtocol: class {
     var currentPage: Int { get }
     
     func select(page index: Int)
+    
+    func select(pageInMenu index: Int)
+    
+    func select(pageInContainer index: Int)
 }
 
 class PageCoordinator: PageCoordinatorProtocol {
@@ -24,7 +28,15 @@ class PageCoordinator: PageCoordinatorProtocol {
     
     func select(page index: Int) {
         currentPage = index
-        container?.setActive(page: index)
+        select(pageInMenu: index)
+        select(pageInContainer: index)
+    }
+    
+    func select(pageInMenu index: Int) {
         menu?.setActive(page: index)
+    }
+    
+    func select(pageInContainer index: Int) {
+        container?.setActive(page: index)
     }
 }

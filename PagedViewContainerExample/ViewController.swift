@@ -22,9 +22,13 @@ class ViewController: UIViewController {
         let yellowView = UIView()
         yellowView.backgroundColor = .yellow
         
+        let blueView = UIView()
+        blueView.backgroundColor = .blue
+        
         let items = [
             PageItem(title: "red view", view: redView),
-            PageItem(title: "yellow view", view: yellowView) ]
+            PageItem(title: "blue view", view: blueView),
+            PageItem(title: "yellow view with long title", view: yellowView) ]
         
         let config = PagedViewContainerConfig.shared
         let pagedContainer = PagedViewContainer(config: config)
@@ -41,7 +45,6 @@ class ViewController: UIViewController {
         guide.bottomAnchor.constraint(equalTo: pagedContainer.bottomAnchor).isActive = true
         guide.trailingAnchor.constraint(equalTo: pagedContainer.trailingAnchor).isActive = true
         guide.leadingAnchor.constraint(equalTo: pagedContainer.leadingAnchor).isActive = true
-        
     }
 }
 

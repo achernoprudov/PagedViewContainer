@@ -33,6 +33,8 @@ class PageContainterScrollView: UIScrollView, PageContainer {
         isPagingEnabled = true
         bounces = false
         showsHorizontalScrollIndicator = false
+        
+        delegate = self
     }
     
     func setActive(page index: Int) {
@@ -48,6 +50,8 @@ class PageContainterScrollView: UIScrollView, PageContainer {
     // MARK: - Private
     
     private func add(viewsAsPages views: [UIView]) {
+        var trailing: NSLayoutXAxisAnchor = leadingAnchor
+        
         for view in views {
             view.setContentCompressionResistancePriority(751, for: .horizontal)
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -57,13 +61,22 @@ class PageContainterScrollView: UIScrollView, PageContainer {
             view.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
             view.topAnchor.constraint(equalTo: topAnchor).isActive = true
             view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            
+            view.leadingAnchor.constraint(equalTo: trailing).isActive = true
+            trailing = view.trailingAnchor
         }
         
-        //TODO make for any number of views
-        views.first?.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        views.last?.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        views.first?.trailingAnchor.constraint(equalTo: views.last!.leadingAnchor).isActive = true
+        trailing.constraint(equalTo: trailingAnchor).isActive = true
         
         self.pages = views
     }
 }
+
+extension PageContainterScrollView: UIScrollViewDelegate {
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let indexOfPage = scrollView.contentOffset.x / scrollView.frame.size.width
+        coordinator?.select(page: Int(indexOfPage))
+    }
+}
+

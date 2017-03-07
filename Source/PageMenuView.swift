@@ -40,6 +40,9 @@ class PageMenuView: UIScrollView, PageMenu {
         self.coordinator = coordinator
         self.config = config
         
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
+        
         setupConstraints()
     }
     
@@ -50,13 +53,15 @@ class PageMenuView: UIScrollView, PageMenu {
     
     func setActive(page index: Int) {
         reloadViews()
+        
+        let item = menuItems[index]
+        scrollRectToVisible(item.frame, animated: true)
     }
     
     // MARK: - Private
     
     private func reloadViews() {
         menuItems.forEach { $0.reloadView() }
-        // move indicator
     }
     
     private func setupConstraints() {
@@ -76,21 +81,23 @@ class PageMenuView: UIScrollView, PageMenu {
         }
         let multiplier = CGFloat(1) / CGFloat(items.count)
         
+        var trailing: NSLayoutXAxisAnchor = leadingAnchor
+        
         for view in menuItems {
             view.translatesAutoresizingMaskIntoConstraints = false
             addSubview(view)
             contentInset = .zero
             
-            view.widthAnchor.constraint(equalTo: widthAnchor, multiplier: multiplier).isActive = true
+            view.widthAnchor.constraint(greaterThanOrEqualTo: widthAnchor, multiplier: multiplier).isActive = true
             view.heightAnchor.constraint(equalToConstant: MaxHeight).isActive = true
             
             view.topAnchor.constraint(equalTo: topAnchor).isActive = true
             view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            
+            view.leadingAnchor.constraint(equalTo: trailing).isActive = true
+            trailing = view.trailingAnchor
         }
         
-        //TODO make for any number of views
-        menuItems.first?.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        menuItems.last?.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        menuItems.first?.trailingAnchor.constraint(equalTo: menuItems.last!.leadingAnchor).isActive = true
+        trailing.constraint(equalTo: trailingAnchor).isActive = true
     }
 }
