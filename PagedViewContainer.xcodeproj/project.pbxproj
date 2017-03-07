@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		673B710E1E6E7D3500DAD246 /* PagedViewContainer.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 673B710D1E6E7D3500DAD246 /* PagedViewContainer.podspec */; };
 		67ACC94F1E6D714300DBBF66 /* PagedViewContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67ACC9451E6D714300DBBF66 /* PagedViewContainer.framework */; };
 		67ACC9541E6D714300DBBF66 /* PagedViewContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ACC9531E6D714300DBBF66 /* PagedViewContainerTests.swift */; };
 		67ACC9561E6D714300DBBF66 /* PagedViewContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 67ACC9481E6D714300DBBF66 /* PagedViewContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		673B710D1E6E7D3500DAD246 /* PagedViewContainer.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PagedViewContainer.podspec; sourceTree = SOURCE_ROOT; };
 		67ACC9451E6D714300DBBF66 /* PagedViewContainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PagedViewContainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67ACC9481E6D714300DBBF66 /* PagedViewContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagedViewContainer.h; sourceTree = "<group>"; };
 		67ACC9491E6D714300DBBF66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		67ACC9471E6D714300DBBF66 /* PagedViewContainer */ = {
 			isa = PBXGroup;
 			children = (
+				673B710D1E6E7D3500DAD246 /* PagedViewContainer.podspec */,
 				67ACC9481E6D714300DBBF66 /* PagedViewContainer.h */,
 				67ACC9491E6D714300DBBF66 /* Info.plist */,
 			);
@@ -351,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				673B710E1E6E7D3500DAD246 /* PagedViewContainer.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
