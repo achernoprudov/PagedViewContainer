@@ -25,6 +25,7 @@
 		67ACC99B1E6D72C000DBBF66 /* PageMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ACC9951E6D72C000DBBF66 /* PageMenuItem.swift */; };
 		67ACC9A21E6D767000DBBF66 /* PagedViewContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67ACC9451E6D714300DBBF66 /* PagedViewContainer.framework */; };
 		67ACC9A31E6D767000DBBF66 /* PagedViewContainer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67ACC9451E6D714300DBBF66 /* PagedViewContainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		67ACC9A81E6E753000DBBF66 /* PageMenuIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ACC9A71E6E753000DBBF66 /* PageMenuIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		67ACC9931E6D72C000DBBF66 /* PagerContainterScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagerContainterScrollView.swift; path = Source/PagerContainterScrollView.swift; sourceTree = "<group>"; };
 		67ACC9941E6D72C000DBBF66 /* PageMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageMenuView.swift; path = Source/PageMenuView.swift; sourceTree = "<group>"; };
 		67ACC9951E6D72C000DBBF66 /* PageMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageMenuItem.swift; path = Source/PageMenuItem.swift; sourceTree = "<group>"; };
+		67ACC9A71E6E753000DBBF66 /* PageMenuIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageMenuIndicator.swift; path = Source/PageMenuIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				67ACC9931E6D72C000DBBF66 /* PagerContainterScrollView.swift */,
 				67ACC9941E6D72C000DBBF66 /* PageMenuView.swift */,
 				67ACC9951E6D72C000DBBF66 /* PageMenuItem.swift */,
+				67ACC9A71E6E753000DBBF66 /* PageMenuIndicator.swift */,
 				67ACC98E1E6D726E00DBBF66 /* PagedViewContainer.swift */,
 			);
 			name = Source;
@@ -383,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67ACC9991E6D72C000DBBF66 /* PagerContainterScrollView.swift in Sources */,
+				67ACC9A81E6E753000DBBF66 /* PageMenuIndicator.swift in Sources */,
 				67ACC98F1E6D726E00DBBF66 /* PagedViewContainer.swift in Sources */,
 				67ACC9961E6D72C000DBBF66 /* PageItem.swift in Sources */,
 				67ACC99B1E6D72C000DBBF66 /* PageMenuItem.swift in Sources */,

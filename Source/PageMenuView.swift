@@ -21,6 +21,7 @@ class PageMenuView: UIScrollView, PageMenu {
     // MARK: - Aliases
     
     typealias Config = PagedViewContainerConfig
+    typealias Indicator = PageMenuIndicator
     
     // MARK: - Instance variables
     
@@ -30,6 +31,7 @@ class PageMenuView: UIScrollView, PageMenu {
     private var config: Config!
     
     private weak var coordinator: PageCoordinatorProtocol?
+    weak var indicator: Indicator?
     
     // MARK: - Public
     
@@ -44,11 +46,17 @@ class PageMenuView: UIScrollView, PageMenu {
         showsHorizontalScrollIndicator = false
         
         setupConstraints()
+        addIndicator(config: config)
     }
     
     func setup(withItems items: [PageItem]) {
+        guard !items.isEmpty else {
+            return
+        }
+        
         addButtons(with: items)
         reloadViews()
+        indicator?.move(toFrame: menuItems.first!.frame)
     }
     
     func setActive(page index: Int) {
@@ -56,6 +64,15 @@ class PageMenuView: UIScrollView, PageMenu {
         
         let item = menuItems[index]
         scrollRectToVisible(item.frame, animated: true)
+        
+        indicator?.move(toFrame: item.frame)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let page = coordinator?.currentPage ?? 0
+        let item = menuItems[page]
+        indicator?.move(toFrame: item.frame, animated: false)
     }
     
     // MARK: - Private
@@ -99,5 +116,11 @@ class PageMenuView: UIScrollView, PageMenu {
         }
         
         trailing.constraint(equalTo: trailingAnchor).isActive = true
+    }
+    
+    private func addIndicator(config: Config) {
+        let indicator = Indicator(config: config)
+        addSubview(indicator)
+        self.indicator = indicator
     }
 }

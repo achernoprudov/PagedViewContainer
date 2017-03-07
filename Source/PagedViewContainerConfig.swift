@@ -29,7 +29,8 @@ public struct PagedViewContainerConfig {
         menuBackgroundColor: UIColor = .white,
         activeItemTextColor: UIColor = .black,
         inactiveItemTextColor: UIColor = .gray,
-        indicatorColor: UIColor = .black) {
+        indicatorColor: UIColor = .black)
+    {
         self.pagesBackgroundColor = pagesBackgroundColor
         self.menuBackgroundColor = menuBackgroundColor
         self.activeItemTextColor = activeItemTextColor
