@@ -13,7 +13,6 @@ protocol PageMenu: class {
     func setup(withItems items: [PageItem])
     
     func setActive(page index: Int)
-
 }
 
 class PageMenuView: UIScrollView, PageMenu {
@@ -45,17 +44,21 @@ class PageMenuView: UIScrollView, PageMenu {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         
-        setupConstraints()
-        addIndicator(config: config)
+        setupView()
+        addIndicator()
     }
     
     func setup(withItems items: [PageItem]) {
+        menuItems.removeAll()
+        subviews.forEach { $0.removeFromSuperview() }
+        
         guard !items.isEmpty else {
             return
         }
         
         addButtons(with: items)
         reloadViews()
+        addIndicator()
         indicator?.move(toFrame: menuItems.first!.frame)
     }
     
@@ -70,6 +73,7 @@ class PageMenuView: UIScrollView, PageMenu {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         let page = coordinator?.currentPage ?? 0
         let item = menuItems[page]
         indicator?.move(toFrame: item.frame, animated: false)
@@ -81,7 +85,7 @@ class PageMenuView: UIScrollView, PageMenu {
         menuItems.forEach { $0.reloadView() }
     }
     
-    private func setupConstraints() {
+    private func setupView() {
         bounces = false
         contentInset = .zero
         translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +100,11 @@ class PageMenuView: UIScrollView, PageMenu {
             item.tag = index
             menuItems.append(item)
         }
-        let multiplier = CGFloat(1) / CGFloat(items.count)
+        setupViewConstraints()
+    }
+    
+    private func setupViewConstraints() {
+        let multiplier = CGFloat(1) / CGFloat(max(coordinator?.enabledItems.count ?? 0, 1))
         
         var trailing: NSLayoutXAxisAnchor = leadingAnchor
         
@@ -104,8 +112,12 @@ class PageMenuView: UIScrollView, PageMenu {
             view.translatesAutoresizingMaskIntoConstraints = false
             addSubview(view)
             contentInset = .zero
+                   
+            view.parentRelatedWidthConstraint = view.widthAnchor
+                .constraint(greaterThanOrEqualTo: widthAnchor, multiplier: multiplier)
+            view.parentRelatedWidthConstraint.priority = 1000
+            view.parentRelatedWidthConstraint.isActive = true
             
-            view.widthAnchor.constraint(greaterThanOrEqualTo: widthAnchor, multiplier: multiplier).isActive = true
             view.heightAnchor.constraint(equalToConstant: MaxHeight).isActive = true
             
             view.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -118,9 +130,9 @@ class PageMenuView: UIScrollView, PageMenu {
         trailing.constraint(equalTo: trailingAnchor).isActive = true
     }
     
-    private func addIndicator(config: Config) {
-        let indicator = Indicator(config: config)
-        addSubview(indicator)
-        self.indicator = indicator
+    private func addIndicator() {
+        let indicatorView = Indicator(config: config)
+        addSubview(indicatorView)
+        indicator = indicatorView
     }
 }

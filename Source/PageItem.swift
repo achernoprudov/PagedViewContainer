@@ -13,6 +13,8 @@ public struct PageItem {
     public var title: String
     public var view: UIView
     
+    var isEnabled: Bool = true
+    
     public init(title: String, view: UIView) {
         self.title = title
         self.view = view
