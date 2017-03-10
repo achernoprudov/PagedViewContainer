@@ -1,37 +1,38 @@
 //
-//  ViewController.swift
-//  PagedViewContainerExample
+//  DisableTabViewController.swift
+//  PagedViewContainer
 //
-//  Created by Андрей Чернопрудов on 06/03/2017.
+//  Created by Андрей Чернопрудов on 09/03/2017.
 //  Copyright © 2017 Little Stars. All rights reserved.
 //
 
 import UIKit
 import PagedViewContainer
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var contentView: UIView!
+class DisableTabViewController: UIViewController {
     
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var tabDisabledSwitch: UISwitch!
+    
+    weak var pageContainer: PagedViewContainer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let redView = UIView()
         redView.backgroundColor = .red
         
         let yellowView = UIView()
         yellowView.backgroundColor = .yellow
         
-        let blueView = UIView()
-        blueView.backgroundColor = .blue
-        
         let items = [
             PageItem(title: "red view", view: redView),
-            PageItem(title: "blue view", view: blueView),
-            PageItem(title: "yellow view with long title", view: yellowView) ]
+            PageItem(title: "yellow view", view: yellowView)
+        ]
         
         let config = PagedViewContainerConfig.shared
         let pagedContainer = PagedViewContainer(config: config)
+        self.pageContainer = pagedContainer
         pagedContainer.setup(with: items)
         
         automaticallyAdjustsScrollViewInsets = false
@@ -46,5 +47,9 @@ class ViewController: UIViewController {
         guide.trailingAnchor.constraint(equalTo: pagedContainer.trailingAnchor).isActive = true
         guide.leadingAnchor.constraint(equalTo: pagedContainer.leadingAnchor).isActive = true
     }
+    
+    @IBAction func switchDidChange(_ sender: Any) {
+        let isDisabled = !tabDisabledSwitch.isOn
+        pageContainer?.set(page: 1, isEnabled: isDisabled)
+    }
 }
-

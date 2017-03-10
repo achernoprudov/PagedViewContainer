@@ -17,6 +17,9 @@ class PageMenuItem: UIView {
     
     // MARK: - Instance variables
     
+    var parentRelatedWidthConstraint: NSLayoutConstraint!
+    var selfWidthConstraint: NSLayoutConstraint!
+    
     private weak var coordinator: PageCoordinatorProtocol?
     private weak var label: UILabel!
     private var config: Config!
@@ -59,10 +62,15 @@ class PageMenuItem: UIView {
         
         let guide = layoutMarginsGuide
         
-        label.leadingAnchor
-            .constraint(equalTo: guide.leadingAnchor).isActive = true
-        label.trailingAnchor
-            .constraint(equalTo: guide.trailingAnchor).isActive = true
+        let leading = label.leadingAnchor
+            .constraint(equalTo: guide.leadingAnchor)
+        leading.isActive = true
+        leading.priority = 970
+        
+        let trailing = label.trailingAnchor
+            .constraint(equalTo: guide.trailingAnchor)
+        trailing.isActive = true
+        trailing.priority = 970
     }
     
     private func addGestures() {
