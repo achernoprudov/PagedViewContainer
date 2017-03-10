@@ -13,7 +13,7 @@
         <!--Paged menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PagedViewContainerExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MultiTabViewController" customModule="PagedViewContainerExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2023" y="472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JSE-h2-4tn">
@@ -55,12 +55,128 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8py-1G-dA3"/>
+                        <segue destination="S6z-Mb-Af3" kind="relationship" relationship="rootViewController" id="llj-KD-7QN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5l-Oc-SGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="792.95352323838085"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="oii-8i-6Oy">
+            <objects>
+                <tableViewController id="S6z-Mb-Af3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wpf-1O-jLK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="kdM-D6-uNQ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="GlJ-H6-0tD" style="IBUITableViewCellStyleDefault" id="Rjm-Pk-Wwo">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rjm-Pk-Wwo" id="h0c-og-6n4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Multi tab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GlJ-H6-0tD">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="r3v-yF-eIP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="IWk-xw-vyn" style="IBUITableViewCellStyleDefault" id="qOI-Uk-1QC">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qOI-Uk-1QC" id="12T-Gf-qv5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Second page disabler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IWk-xw-vyn">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="3Vz-tm-Uyh" kind="show" id="Zfg-fj-gqS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="S6z-Mb-Af3" id="7HW-Kd-VwE"/>
+                            <outlet property="delegate" destination="S6z-Mb-Af3" id="41o-5B-SX5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="aZD-PA-jZK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q6p-NP-ix5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="821"/>
+        </scene>
+        <!--Paged menu-->
+        <scene sceneID="SzS-Tm-9ie">
+            <objects>
+                <viewController id="3Vz-tm-Uyh" customClass="DisableTabViewController" customModule="PagedViewContainerExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HFJ-nc-nua"/>
+                        <viewControllerLayoutGuide type="bottom" id="02o-OF-PyI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LJa-DE-06y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8a-hZ-doG">
+                                <rect key="frame" x="36" y="124" width="303" height="379"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-dp-RAj">
+                                <rect key="frame" x="36" y="531" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchDidChange:" destination="3Vz-tm-Uyh" eventType="valueChanged" id="gtN-Tm-YGW"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is second tab disabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7H-yY-JVy">
+                                <rect key="frame" x="93" y="536" width="172" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DhN-dp-RAj" firstAttribute="leading" secondItem="LJa-DE-06y" secondAttribute="leadingMargin" constant="20" id="1BY-fn-7im"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y8a-hZ-doG" secondAttribute="trailing" constant="20" id="1v7-c9-LWv"/>
+                            <constraint firstItem="Y8a-hZ-doG" firstAttribute="top" secondItem="HFJ-nc-nua" secondAttribute="bottom" constant="60" id="DRN-JB-Oci"/>
+                            <constraint firstItem="P7H-yY-JVy" firstAttribute="leading" secondItem="DhN-dp-RAj" secondAttribute="trailing" constant="8" id="TQp-BL-mdT"/>
+                            <constraint firstItem="P7H-yY-JVy" firstAttribute="centerY" secondItem="DhN-dp-RAj" secondAttribute="centerY" id="aEt-sp-j8K"/>
+                            <constraint firstItem="DhN-dp-RAj" firstAttribute="top" secondItem="Y8a-hZ-doG" secondAttribute="bottom" constant="28" id="cSl-nd-SJG"/>
+                            <constraint firstItem="Y8a-hZ-doG" firstAttribute="leading" secondItem="LJa-DE-06y" secondAttribute="leadingMargin" constant="20" id="frH-bm-348"/>
+                            <constraint firstItem="02o-OF-PyI" firstAttribute="top" secondItem="DhN-dp-RAj" secondAttribute="bottom" constant="105" id="m5w-YC-Ddq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Paged menu" id="ZLH-nW-tCw"/>
+                    <connections>
+                        <outlet property="contentView" destination="Y8a-hZ-doG" id="3dY-Af-qw7"/>
+                        <outlet property="tabDisabledSwitch" destination="DhN-dp-RAj" id="U0I-20-Gpf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpX-Ua-lYs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2021.5999999999999" y="1142.8785607196403"/>
         </scene>
     </scenes>
 </document>

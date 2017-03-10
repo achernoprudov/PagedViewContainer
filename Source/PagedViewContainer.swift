@@ -38,8 +38,13 @@ open class PagedViewContainer: UIView {
     }
     
     open func setup(with items: [PageItem]) {
-        pageMenu.setup(withItems: items)
+        coordinator.setup(with: items)
         pageContainer.setup(with: items)
+        pageMenu.setup(withItems: items)
+    }
+    
+    open func set(page index: Int, isEnabled: Bool) {
+        coordinator.set(page: index, isEnabled: isEnabled)
     }
     
     // MARK: - Private

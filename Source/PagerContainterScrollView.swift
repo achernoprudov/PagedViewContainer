@@ -43,6 +43,9 @@ class PageContainterScrollView: UIScrollView, PageContainer {
     }
     
     func setup(with items: [PageItem]) {
+        subviews.forEach { $0.removeFromSuperview() }
+        pages.removeAll()
+        
         let views = items.map { $0.view }
         add(viewsAsPages: views)
     }

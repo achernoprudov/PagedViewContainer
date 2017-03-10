@@ -12,19 +12,36 @@ protocol PageCoordinatorProtocol: class {
     
     var currentPage: Int { get }
     
+    var enabledItems: [PageItem] { get }
+    
     func select(page index: Int)
     
     func select(pageInMenu index: Int)
     
     func select(pageInContainer index: Int)
+    
+    func set(page index: Int, isEnabled: Bool)
+    
+    func isEnabled(page: Int) -> Bool
 }
 
 class PageCoordinator: PageCoordinatorProtocol {
+    
+    var items: [PageItem] = []
     
     var currentPage: Int = 0
     
     weak var menu: PageMenu?
     weak var container: PageContainer?
+    
+    var enabledItems: [PageItem] {
+        return items.filter { $0.isEnabled }
+    }
+    
+    func setup(with items: [PageItem]) {
+        self.items = items
+        correctCurrentPageIndex()
+    }
     
     func select(page index: Int) {
         currentPage = index
@@ -38,5 +55,26 @@ class PageCoordinator: PageCoordinatorProtocol {
     
     func select(pageInContainer index: Int) {
         container?.setActive(page: index)
+    }
+    
+    func set(page index: Int, isEnabled: Bool) {
+        items[index].isEnabled = isEnabled
+        correctCurrentPageIndex()
+        
+        let enabledItems = self.enabledItems
+        UIView.animate(withDuration: 0.3) { 
+            self.menu?.setup(withItems: enabledItems)
+            self.container?.setup(with: enabledItems)
+        }
+    }
+    
+    func isEnabled(page: Int) -> Bool {
+        return items[page].isEnabled
+    }
+    
+    private func correctCurrentPageIndex() {
+        if currentPage >= enabledItems.count {
+            currentPage = 0
+        }
     }
 }
