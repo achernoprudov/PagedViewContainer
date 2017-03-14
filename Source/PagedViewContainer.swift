@@ -47,6 +47,14 @@ open class PagedViewContainer: UIView {
         coordinator.set(page: index, isEnabled: isEnabled)
     }
     
+    open func isEnabled(page index: Int) -> Bool {
+        return coordinator.items[index].isEnabled
+    }
+    
+    open var enabledPagesCount: Int {
+        return coordinator.enabledItems.count
+    }
+    
     // MARK: - Private
     
     private func buildMenu() {
