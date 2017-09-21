@@ -56,7 +56,7 @@ class PageContainterScrollView: UIScrollView, PageContainer {
         var trailing: NSLayoutXAxisAnchor = leadingAnchor
         
         for view in views {
-            view.setContentCompressionResistancePriority(751, for: .horizontal)
+            view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 751), for: .horizontal)
             view.translatesAutoresizingMaskIntoConstraints = false
             addSubview(view)
             

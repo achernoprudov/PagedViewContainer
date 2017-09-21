@@ -115,7 +115,7 @@ class PageMenuView: UIScrollView, PageMenu {
                    
             view.parentRelatedWidthConstraint = view.widthAnchor
                 .constraint(greaterThanOrEqualTo: widthAnchor, multiplier: multiplier)
-            view.parentRelatedWidthConstraint.priority = 1000
+            view.parentRelatedWidthConstraint.priority = UILayoutPriority(rawValue: 1000)
             view.parentRelatedWidthConstraint.isActive = true
             
             view.heightAnchor.constraint(equalToConstant: MaxHeight).isActive = true

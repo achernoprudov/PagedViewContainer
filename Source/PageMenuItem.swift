@@ -36,7 +36,7 @@ class PageMenuItem: UIView {
         addGestures()
     }
     
-    func didTap() {
+    @objc func didTap() {
         coordinator?.select(page: tag)
     }
     
@@ -65,12 +65,12 @@ class PageMenuItem: UIView {
         let leading = label.leadingAnchor
             .constraint(equalTo: guide.leadingAnchor)
         leading.isActive = true
-        leading.priority = 970
+        leading.priority = UILayoutPriority(rawValue: 970)
         
         let trailing = label.trailingAnchor
             .constraint(equalTo: guide.trailingAnchor)
         trailing.isActive = true
-        trailing.priority = 970
+        trailing.priority = UILayoutPriority(rawValue: 970)
     }
     
     private func addGestures() {
