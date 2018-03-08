@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Configuration for PagedViewContainer
 public struct PagedViewContainerConfig {
     
     // MARK: - Static variables

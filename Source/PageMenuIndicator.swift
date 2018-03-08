@@ -20,21 +20,17 @@ class PageMenuIndicator: UIView {
     }
     
     func move(toFrame itemFrame: CGRect, animated: Bool = true) {
-        let newFrame = CGRect(x: itemFrame.origin.x,
-                              y: itemFrame.size.height - Height,
-                              width: itemFrame.size.width,
-                              height: Height)
+        let newFrame = CGRect(
+            x: itemFrame.origin.x, y: itemFrame.size.height - Height,
+            width: itemFrame.size.width, height: Height)
         
         guard animated else {
             frame = newFrame
             return
         }
         
-        UIView.animate(withDuration: 0.3,
-                       delay: 0,
-                       options: .curveEaseInOut,
-                       animations: { 
-                        self.frame = newFrame
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                self.frame = newFrame
         }, completion: nil)
     }
 }

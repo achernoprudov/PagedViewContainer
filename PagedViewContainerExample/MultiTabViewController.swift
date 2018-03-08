@@ -41,10 +41,12 @@ class MultiTabViewController: UIViewController {
         
         let guide = contentView.layoutMarginsGuide
         
-        guide.topAnchor.constraint(equalTo: pagedContainer.topAnchor).isActive = true
-        guide.bottomAnchor.constraint(equalTo: pagedContainer.bottomAnchor).isActive = true
-        guide.trailingAnchor.constraint(equalTo: pagedContainer.trailingAnchor).isActive = true
-        guide.leadingAnchor.constraint(equalTo: pagedContainer.leadingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            guide.topAnchor.constraint(equalTo: pagedContainer.topAnchor),
+            guide.bottomAnchor.constraint(equalTo: pagedContainer.bottomAnchor),
+            guide.trailingAnchor.constraint(equalTo: pagedContainer.trailingAnchor),
+            guide.leadingAnchor.constraint(equalTo: pagedContainer.leadingAnchor)
+        ])
     }
 }
 

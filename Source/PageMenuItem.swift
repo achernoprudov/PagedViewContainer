@@ -74,7 +74,7 @@ class PageMenuItem: UIView {
     }
     
     private func addGestures() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(PageMenuItem.didTap))
-        addGestureRecognizer(tap)
+        addGestureRecognizer(UITapGestureRecognizer(
+            target: self, action: #selector(didTap)))
     }
 }
