@@ -4,6 +4,13 @@ Simple container for paged views.
 
 ![Alt Text](https://github.com/achernoprudov/PagedViewContainer/blob/master/Demo/demo.gif)
 
+## Installation
+
+Cocoapods:
+```
+pod 'PagedViewContainer', '~> 0.2.2'
+```
+
 ## Details 
 
 Uses `UIView` not `UIViewController`.
