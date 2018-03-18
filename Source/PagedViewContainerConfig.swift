@@ -11,6 +11,17 @@ import UIKit
 /// Configuration for PagedViewContainer
 public struct PagedViewContainerConfig {
     
+    // MARK: - Enum
+    
+    /// Menu mode definition
+    ///
+    /// - pagedTop: menu located on top of view. With page indicator
+    /// - none: configuration without menu
+    public enum Mode {
+        case pagedTop
+        case none
+    }
+    
     // MARK: - Static variables
     
     public static let shared: PagedViewContainerConfig = PagedViewContainerConfig()
@@ -22,6 +33,7 @@ public struct PagedViewContainerConfig {
     public var activeItemTextColor: UIColor
     public var inactiveItemTextColor: UIColor
     public var indicatorColor: UIColor
+    public var mode: Mode
 
     // MARK: - Public
     
@@ -30,12 +42,14 @@ public struct PagedViewContainerConfig {
         menuBackgroundColor: UIColor = .white,
         activeItemTextColor: UIColor = .black,
         inactiveItemTextColor: UIColor = .gray,
-        indicatorColor: UIColor = .black)
+        indicatorColor: UIColor = .black,
+        mode: Mode = .pagedTop)
     {
         self.pagesBackgroundColor = pagesBackgroundColor
         self.menuBackgroundColor = menuBackgroundColor
         self.activeItemTextColor = activeItemTextColor
         self.inactiveItemTextColor = inactiveItemTextColor
         self.indicatorColor = indicatorColor
+        self.mode = mode
     }
 }

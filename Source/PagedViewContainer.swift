@@ -18,10 +18,14 @@ open class PagedViewContainer: UIView {
     // MARK: - Instance variables
     
     private weak var pageContainer: PageContainterScrollView!
-    private weak var pageMenu: PageMenuView!
+    private weak var pageMenu: PageMenuView?
     
     private var coordinator = PageCoordinator()
     private var config: Config!
+    
+    private var containerTopAnchor: NSLayoutYAxisAnchor {
+        return pageMenu != nil ? pageMenu!.bottomAnchor : topAnchor
+    }
     
     // MARK: - Public
     
@@ -42,7 +46,7 @@ open class PagedViewContainer: UIView {
     open func setup(with items: [PageItem]) {
         coordinator.setup(with: items)
         pageContainer.setup(with: items)
-        pageMenu.setup(withItems: items)
+        pageMenu?.setup(withItems: items)
     }
     
     /// Define page at index as enabled(disabled) in container
@@ -63,6 +67,9 @@ open class PagedViewContainer: UIView {
     // MARK: - Private
     
     private func buildMenu() {
+        guard config.mode == .pagedTop else {
+            return
+        }
         let menu = PageMenuView(coordinator: coordinator, config: config)
         addSubview(menu)
         
@@ -79,7 +86,7 @@ open class PagedViewContainer: UIView {
         addSubview(container)
         
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: pageMenu.bottomAnchor),
+            container.topAnchor.constraint(equalTo: containerTopAnchor),
             container.bottomAnchor.constraint(equalTo: bottomAnchor),
             container.leadingAnchor.constraint(equalTo: leadingAnchor),
             container.trailingAnchor.constraint(equalTo: trailingAnchor)
