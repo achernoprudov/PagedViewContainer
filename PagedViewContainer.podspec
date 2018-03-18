@@ -25,7 +25,7 @@ PagedViewContainer helps to present views in pages with top bar menu to navigate
                    DESC
 
   s.homepage     = "https://github.com/achernoprudov/PagedViewContainer"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+  s.screenshots  = "https://github.com/achernoprudov/PagedViewContainer/blob/master/Demo/demo.gif"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -50,5 +50,6 @@ PagedViewContainer helps to present views in pages with top bar menu to navigate
   s.exclude_files = "Example"
 
   s.framework  = "UIKit"
+  s.swift_version = "4.0"
 
 end
