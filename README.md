@@ -8,7 +8,7 @@ Simple container for paged views.
 
 Cocoapods:
 ```
-pod 'PagedViewContainer', '~> 0.2.2'
+pod 'PagedViewContainer', '~> 0.2'
 ```
 
 ## Details 

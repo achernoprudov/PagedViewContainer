@@ -15,6 +15,7 @@
 		553055572051103D0003E2BE /* PageMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530554F2051103C0003E2BE /* PageMenuItem.swift */; };
 		553055582051103D0003E2BE /* PageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553055502051103C0003E2BE /* PageItem.swift */; };
 		553055592051103D0003E2BE /* PagerContainterScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553055512051103C0003E2BE /* PagerContainterScrollView.swift */; };
+		556E911B205EA4E900CBDEBA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 556E911A205EA4E900CBDEBA /* README.md */; };
 		673B710E1E6E7D3500DAD246 /* PagedViewContainer.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 673B710D1E6E7D3500DAD246 /* PagedViewContainer.podspec */; };
 		673B71161E7151BA00DAD246 /* DisableTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B71141E7151B500DAD246 /* DisableTabViewController.swift */; };
 		67ACC94F1E6D714300DBBF66 /* PagedViewContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67ACC9451E6D714300DBBF66 /* PagedViewContainer.framework */; };
@@ -77,6 +78,7 @@
 		5530554F2051103C0003E2BE /* PageMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMenuItem.swift; sourceTree = "<group>"; };
 		553055502051103C0003E2BE /* PageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItem.swift; sourceTree = "<group>"; };
 		553055512051103C0003E2BE /* PagerContainterScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerContainterScrollView.swift; sourceTree = "<group>"; };
+		556E911A205EA4E900CBDEBA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		673B710D1E6E7D3500DAD246 /* PagedViewContainer.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PagedViewContainer.podspec; sourceTree = SOURCE_ROOT; };
 		673B71141E7151B500DAD246 /* DisableTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableTabViewController.swift; sourceTree = "<group>"; };
 		67ACC9451E6D714300DBBF66 /* PagedViewContainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PagedViewContainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 		67ACC9471E6D714300DBBF66 /* PagedViewContainer */ = {
 			isa = PBXGroup;
 			children = (
+				556E911A205EA4E900CBDEBA /* README.md */,
 				673B710D1E6E7D3500DAD246 /* PagedViewContainer.podspec */,
 				67ACC9481E6D714300DBBF66 /* PagedViewContainer.h */,
 				67ACC9491E6D714300DBBF66 /* Info.plist */,
@@ -358,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556E911B205EA4E900CBDEBA /* README.md in Resources */,
 				673B710E1E6E7D3500DAD246 /* PagedViewContainer.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

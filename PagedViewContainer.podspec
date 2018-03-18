@@ -25,7 +25,7 @@ PagedViewContainer helps to present views in pages with top bar menu to navigate
                    DESC
 
   s.homepage     = "https://github.com/achernoprudov/PagedViewContainer"
-  s.screenshots  = "https://github.com/achernoprudov/PagedViewContainer/blob/master/Demo/demo.gif"
+  s.screenshots  = "https://github.com/achernoprudov/PagedViewContainer/raw/master/Demo/demo.gif"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
