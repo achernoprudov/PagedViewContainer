@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "PagedViewContainer"
-  s.version      = "0.2.4"
+  s.version      = "0.2.5"
   s.summary      = "PagedViewContainer helps to present views in pages with top bar menu to navigate through views."
 
   # This description is used to generate tags and improve search results.
